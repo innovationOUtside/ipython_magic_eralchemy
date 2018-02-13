@@ -7,7 +7,6 @@ import shlex
 
 from eralchemy import render_er
 
-
 @magics_class
 class EralchemyMagic(Magics):
     def __init__(self, shell, cache_display_data=False):
@@ -26,17 +25,10 @@ class EralchemyMagic(Magics):
         args = parser.parse_args(shlex.split(line))
         
         if args.connection_string is None: return
-        
         fname='{}.{}'.format(args.filestub,args.output_type)
-        try:
-            render_er(args.connection_string, fname )
 
-            if args.output_type=='png':
-                return Image(filename=fname)
-            elif args.output_type=='svg':
-                return SVG(filename=fname)
-        except:
-            return
+        return render_er(args.connection_string, fname )
+
 
 def load_ipython_extension(ipython):
     ipython.register_magics(EralchemyMagic)
