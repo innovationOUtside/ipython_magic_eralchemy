@@ -33,7 +33,8 @@ class EralchemyMagic(Magics):
         include = [i for i in reader([args.include])][0] if args.include is not None else None
         exclude = [i for i in reader([args.exclude])][0] if args.exclude is not None else None
         retval  = render_er(args.connection_string, fname, 
-                            include = include, exclude=exclude) 
+                            include_tables = include_tables,
+                            exclude_tables = exclude_tables) 
         return retval
 
 
