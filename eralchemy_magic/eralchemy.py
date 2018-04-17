@@ -30,8 +30,8 @@ class EralchemyMagic(Magics):
         if args.connection_string is None: return
         fname='{}.{}'.format(args.filestub,args.output_type)
         
-        include = [i for i in reader([args.include])][0] if args.include is not None else None
-        exclude = [i for i in reader([args.exclude])][0] if args.exclude is not None else None
+        include_tables = [i for i in reader([args.include_tables])][0] if args.include_tables is not None else None
+        exclude_tables = [i for i in reader([args.exclude_tables])][0] if args.exclude_tables is not None else None
         retval  = render_er(args.connection_string, fname, 
                             include_tables = include_tables,
                             exclude_tables = exclude_tables) 
