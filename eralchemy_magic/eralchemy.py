@@ -35,7 +35,7 @@ class EralchemyMagic(Magics):
         retval  = render_er(args.connection_string, fname, 
                             include_tables = include_tables,
                             exclude_tables = exclude_tables) 
-        return retval
+        return SVG(filename=fname)
 
 
 def load_ipython_extension(ipython):
