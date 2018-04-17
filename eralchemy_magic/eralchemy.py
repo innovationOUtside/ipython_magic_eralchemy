@@ -22,8 +22,8 @@ class EralchemyMagic(Magics):
         parser.add_argument('-o', '--output_type', default='svg')
         parser.add_argument('-f', '--filestub', default='erd_from_db')
         parser.add_argument('-c', '--connection_string', default=None)
-        parser.add_argument('-i', '--include', default=None)
-        parser.add_argument('-x', '--exclude', default=None)
+        parser.add_argument('-i', '--include_tables', default=None)
+        parser.add_argument('-x', '--exclude_tables', default=None)
         
         args = parser.parse_args(shlex.split(line))
         
